@@ -63,15 +63,43 @@ class MasterForm extends React.Component {
     return null;
   }
 
+  handleChange = (event) => {
+    const { name, value } = event.target;
+    this.setState({
+      [name]: value
+    });
+  };
+  
+  handleSubmit = (event) => {
+    event.preventDefault();
+    const { email, username, password } = this.state;
+    alert(`Your registration detail: \n 
+            Email: ${email} \n 
+            Username: ${username} \n
+            Password: ${password}`);
+  };
+
   render() {
     return (
       <div className='wizard'>
         <h1>React Wizard Form</h1>
         <p>Step {this.state.currentStep} </p>
-        <form>
-          <Step1 currentStep={this.state.currentStep} />
-          <Step2 currentStep={this.state.currentStep} />
-          <Step3 currentStep={this.state.currentStep} />
+        <form onSubmit={this.handleSubmit}>
+          <Step1 
+            currentStep={this.state.currentStep}
+            handleChange={this.handleChange}
+            email={this.state.email} 
+          />
+          <Step2 
+            currentStep={this.state.currentStep}
+            handleChange={this.handleChange}
+            email={this.state.email} 
+          />
+          <Step3 
+            currentStep={this.state.currentStep}
+            handleChange={this.handleChange}
+            email={this.state.email} 
+          />
           {this.previousButton()}
           {this.nextButton()}
         </form>
