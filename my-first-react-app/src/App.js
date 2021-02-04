@@ -2,11 +2,24 @@ import React from 'react';
 
 class MainComponent extends React.Component {
   render() {
+    const users = [
+      { id: 1, name: 'Ivan', role: 'Web Developer' },
+      { id: 2, name: 'Petar', role: 'Web Designer' },
+      { id: 3, name: 'Silvestar', role: 'Team Leader' },
+    ]
     return (
-      <div>
-        <h1>Hello World!</h1>
-        <h2>Learning to code with React</h2>
-      </div>
+      <>
+        <p>The currently active users list:</p>
+        <ul>
+          {
+            users.map(function(user){
+              return (
+                <li> {user.name} as the {user.role} </li>
+              )
+            })
+          }
+        </ul>
+       </>
     )    
   }
 }
