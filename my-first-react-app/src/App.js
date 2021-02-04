@@ -12,7 +12,7 @@ class MainComponent extends React.Component {
         <p>The currently active users list:</p>
         <ul>
           {
-            users.map(function(user){
+            users.map((user) => {
               return (
                 <li> {user.name} as the {user.role} </li>
               )
