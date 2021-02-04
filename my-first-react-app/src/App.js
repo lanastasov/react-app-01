@@ -20,9 +20,9 @@ class MasterForm extends React.Component {
         <h1>React Wizard Form</h1>
         <p>Step {this.state.currentStep} </p>
         <form>
-          <Step1 />
-          <Step2 />
-          <Step3 />
+          <Step1 currentStep={this.state.currentStep} />
+          <Step2 currentStep={this.state.currentStep} />
+          <Step3 currentStep={this.state.currentStep} />
         </form>
       </div>
     );
