@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Step1 from './components/Step1'
 import Step2 from './components/Step2'
 import Step3 from './components/Step3'
@@ -102,10 +102,19 @@ class MasterForm extends React.Component {
           />
           {this.previousButton()}
           {this.nextButton()}
+          <UserComponent />
         </form>
       </div>
     );
   }
+}
+
+function UserComponent() {
+  const [name, setName] = useState('Jack')
+  if(name === 'Jack') {
+    setName("cerol")
+  }
+  return <h1> Hello World! {name}</h1>
 }
 
 export default MasterForm;
