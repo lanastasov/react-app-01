@@ -1,5 +1,14 @@
 import React from 'react';
 
-export default function Header(){
-    return <h1>Header component</h1>
+function AddCategory({ setShowAddCategory }) {
+    return (
+        <>
+        <h1> AddCategory Component </h1>
+        <button onClick={() => setShowAddCategory(false)}>
+            Return to main screen
+        </button>
+        </>
+    );
 }
+
+export default AddCategory;

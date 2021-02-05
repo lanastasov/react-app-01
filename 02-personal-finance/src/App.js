@@ -7,6 +7,16 @@ import AddCategory from './components/AddCategory';
 import AddTransaction from './components/AddTransaction';
 
 export default function App(){
+  const [showAddCategory, setShowAddCategory] = useState(true);
+  if (showAddCategory) {
+    return <AddCategory
+        setShowAddCategory={setShowAddCategory}
+    />;
+  } else {
+    return <Header
+        setShowAddCategory={setShowAddCategory}
+    />
+  }
   return (
     <>
       <Header />
